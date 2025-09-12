@@ -14,5 +14,14 @@
       <option value="Tokyo">Tokyo</option>
       <option value="Sydney">Sydney</option>
     </select>
+
+    <script>
+      function ShowSelectedCountryTimezone(event) {
+        alert(event.target.value);
+      }
+
+      let countrySelect = document.querySelector("#countries");
+      countrySelect.addEventListener("click", ShowSelectedCountryTimezone);
+    </script>
   </body>
 </html>
