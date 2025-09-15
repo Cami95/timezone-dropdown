@@ -11,17 +11,22 @@
     <h1>This is the <strong>TIMEZONE DROPDOWN!!!!</strong></h1>
 
     <select name="" id="city">
-      <option>Select a Country</option>
-      <option value="Europe/Paris">Paris</option>
-      <option value="Asia/Tokyo">Tokyo</option>
-      <option value="Australia/Sydney">Sydney</option>
+      <option>Select a City</option>
+      <option value="Europe/Paris">Paris 🥐🧀</option>
+      <option value="Asia/Tokyo">Tokyo 🗼</option>
+      <option value="Australia/Sydney">Sydney 🦘</option>
+      <option value="Africa/Naputo">Naputo 🦓</option>
     </select>
 
     <script>
       function showDate(event) {
-        let currentTime = moment().format("dddd, MMMM D, YYYY h:mm A");
+        if (event.target.value.length > 0) {
+          let currentTime = moment()
+            .tz(event.target.value)
+            .format("dddd, MMMM D, YYYY h:mm A");
 
-        alert(`It is ${currentTime}`);
+          alert(`It is ${currentTime} in ${event.target.value}`);
+        }
       }
 
       let selectElement = document.querySelector("#city");
